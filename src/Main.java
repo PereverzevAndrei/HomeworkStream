@@ -39,14 +39,4 @@ public class Main {
 
     }
 
-    public static boolean workListFilter(Collection<Person> l) {
-        for (Person person : l) {
-            if (person.getSex() != Sex.WOMAN && person.getAge() < 60) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-
 }
