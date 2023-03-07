@@ -18,7 +18,7 @@ public class Main {
         }
 
         long count = persons.stream()
-                .filter(a -> a.getAge() > 18)
+                .filter(a -> a.getAge() < 18)
                 .count();
         System.out.println(count);
 
@@ -31,8 +31,7 @@ public class Main {
 
         List<Person> workersList = persons.stream()
                 .filter(e -> e.getEducation() == Education.HIGHER)
-                .filter(o -> o.getAge() > 21 && o.getAge() < 65)
-                .filter(x -> workListFilter(persons))
+                .filter(person -> person.getAge() >= 18 && person.getSex() == Sex.WOMAN ? person.getAge() <= 60 : person.getAge() <= 65)
                 .sorted(Comparator.comparing(p -> p.getFamily()))
                 .collect(Collectors.toList());
         System.out.println(workersList.size());
