@@ -24,7 +24,7 @@ public class Main {
 
         List<String> warriorsList = persons.stream()
                 .filter(g -> g.getSex() == Sex.MAN)
-                .filter(a -> a.getAge() > 18 && a.getAge() < 27)
+                .filter(a -> a.getAge() >= 18 && a.getAge() < 27)
                 .map(Person::getFamily)
                 .collect(Collectors.toList());
         System.out.println(warriorsList.size());
